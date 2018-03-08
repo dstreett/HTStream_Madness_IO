@@ -29,5 +29,6 @@ This shows there is something wrong happening even with a simple example.
 
 What doesn't help.
 
-*closing the file descriptor doesn't sovle this problem
-
+* closing the file descriptor doesn't sovle this problem
+* adding a sleep doesn't help (30 seconds)
+* closing + sleep doesn't work
