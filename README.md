@@ -3,6 +3,7 @@ g++ -I /usr/local/opt/boost/include -L /usr/local/opt/boost/lib -std=c++11 simpl
 
 LINUX OUTPUT
 
+
 ```
 Processed line a.out
 Processed line README.md
@@ -11,3 +12,22 @@ Processed line a.out
 Processed line README.md
 Processed line simple_boost.cpp
 ```
+
+
+MAC OUTPUT
+
+
+```
+Processed line README.md
+Processed line a.out
+Processed line simple_boost.cpp
+```
+
+
+This shows there is something wrong happening even with a simple example.
+
+
+What doesn't help.
+
+*closing the file descriptor doesn't sovle this problem
+
