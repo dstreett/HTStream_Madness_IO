@@ -32,3 +32,6 @@ What doesn't help.
 * closing the file descriptor doesn't sovle this problem
 * adding a sleep doesn't help (30 seconds)
 * closing + sleep doesn't work
+
+
+It appears the issue is pclose() with popen(). It seems on linux boost handles this, but on mac it does not. calling pclose(fd int) causes correct behavior.

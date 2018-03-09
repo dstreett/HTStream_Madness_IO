@@ -30,12 +30,15 @@ int main(int argc, char** argv)
 {
     std::vector<std::string> s = {"ls", "ls"}; 
     for(size_t i = 0; i < s.size(); ++i) {
-        sleep(30);
-        int fd_1 = check_open_r(s[i]);
+        FILE *f = NULL;
+        f = popen( (s[i]).c_str() , "r");
+        int fd_1 = fileno(f);
         bi::stream<bi::file_descriptor_source> is1{fd_1, bi::close_handle};
         for(std::string str; std::getline(is1, str); ) {
             std::cout << "Processed line " << str << '\n';
         }
+        is1.close();
         close(fd_1);
+        //pclose(f);
     }
 }
